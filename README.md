@@ -1,1 +1,1 @@
-# SczMethylatioS
+# SczMethylation
