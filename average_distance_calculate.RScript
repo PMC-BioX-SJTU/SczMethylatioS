@@ -1,0 +1,43 @@
+d = 0
+for (i in 1:106) {d = d + test.matrix_dist$value[318*3*(i-1)+3*i]}
+dist_father_average <- d/106
+
+for (i in 1:106) {d = d + test.matrix_dist$value[318*3*(i-1)+3*i+318]}
+dist_mother_average <- d/106
+
+d=0
+for (i in 1:106) {d = d + test.matrix_dist$value[318*3*(i-1)+3*i+318]}
+dist_mother_average <- d/106
+
+d = 0
+for (i in 1:106) {d = d + test.matrix_dist$value[318*3*(i-1)+3*i-1]}
+dist_parents_average <- d/106
+
+#all children
+d = 0
+for (i in 1:106) {
+for (j in 1:106) {
+d = d + test.matrix_dist$value[318*3*(i-1)+3*j+636]
+}
+}
+
+test.matrix_dist$value[-(which(test.matrix_dist$value==0))]
+
+d <- data.frame()
+for (i in 1:106) 
+  {
+  d[i,1] = test.matrix_dist$value[318*3*(i-1)+3*i]
+  d[i,2] = test.matrix_dist$value[318*3*(i-1)+3*i+318]
+  d[i,3] = test.matrix_dist$value[318*3*(i-1)+3*i-1]
+  
+}
+
+ggplot(heightweight, aes(x=ageYear, y=heightIn)) + geom_point()
+pointplot + geom_point(color = 1) # ??????,???????????????
+pointplot + geom_point(color = 2) # ??????
+pointplot + geom_point(color = 3) # ??????
+pointplot + geom_point(color = 4) # ??????
+layer1 = ggplot(average_dist, aes(Fam_ID, Fatherchild)) + geom_point(color = 2)
+layer2 = ggplot(average_dist, aes(Fam_ID, Motherchild)) + geom_point(color = 3)
+
+
